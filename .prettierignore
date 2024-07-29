@@ -1,0 +1,5 @@
+# Ignore tailwind:
+tailwind.config.ts
+
+# Ignore npm:
+package.json
