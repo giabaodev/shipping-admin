@@ -1,8 +1,8 @@
+import Providers from '@/components/providers';
+import { siteConfigs } from '@/config/site';
+import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '@/styles/globals.css';
-import Providers from '@/components/shared/providers';
-import { siteConfigs } from '@/config/site';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +15,12 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-          <main>{children}</main>
+        <Providers themeProps={{ attribute: 'class', defaultTheme: 'light' }}>
+          <main className="h-screen w-screen">{children}</main>
         </Providers>
       </body>
     </html>
