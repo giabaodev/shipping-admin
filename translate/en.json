@@ -1,0 +1,8 @@
+{
+  "auth": {
+    "usname": "Username or email",
+    "pwd": "Password",
+    "lg": "Login",
+    "lo": "Logout"
+  }
+}

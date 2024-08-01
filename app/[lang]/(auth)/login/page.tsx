@@ -1,6 +1,7 @@
 'use client';
 
 import { Button, Input } from '@nextui-org/react';
+import { useTranslations } from 'next-intl';
 import React, { ChangeEvent, useState } from 'react';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
@@ -9,7 +10,8 @@ enum InputType {
   Password = 'PASSWORD',
 }
 
-const Login = () => {
+const LoginPage = () => {
+  const t = useTranslations('auth');
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isVisible, setIsVisible] = React.useState(false);
@@ -42,7 +44,8 @@ const Login = () => {
           type="text"
           autoFocus
           variant="bordered"
-          placeholder="Username or email"
+          color="default"
+          placeholder={t('usname')}
           value={username}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleChangeInput(InputType.Username, e.target.value)
@@ -50,7 +53,7 @@ const Login = () => {
         />
         <Input
           variant="bordered"
-          placeholder="Password"
+          placeholder={t('pwd')}
           value={password}
           endContent={
             <button
@@ -77,11 +80,11 @@ const Login = () => {
           variant="shadow"
           className="bg-gradient-to-r from-[#556270] from-0% via-[#FF6B6B] via-51% to-[#556270] to-100%"
         >
-          Login
+          {t('lg')}
         </Button>
       </div>
     </section>
   );
 };
 
-export default Login;
+export default LoginPage;

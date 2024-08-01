@@ -1,0 +1,8 @@
+{
+  "auth": {
+    "usname": "Tên đăng nhập",
+    "pwd": "Mật khẩu",
+    "lg": "Đăng nhập",
+    "lo": "Đăng xuất"
+  }
+}
