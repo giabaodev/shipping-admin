@@ -34,12 +34,12 @@ const MenuList: MenuType[] = [
       },
       {
         label: 'Products',
-        path: '/products',
+        path: '/product',
         icon: ProductIcon,
       },
       {
         label: 'Orders',
-        path: '/orders',
+        path: '/order',
         icon: OrderIcon,
       },
     ],
@@ -54,12 +54,12 @@ const MenuList: MenuType[] = [
       },
       {
         label: 'Reports',
-        path: '/reports',
+        path: '/report',
         icon: ReportsIcon,
       },
       {
         label: 'Teams',
-        path: '/teams',
+        path: '/team',
         icon: TeamsIcon,
       },
     ],
@@ -69,7 +69,7 @@ const MenuList: MenuType[] = [
     list: [
       {
         label: 'Settings',
-        path: '/settings',
+        path: '/setting',
         icon: SettingsIcon,
       },
       {

@@ -5,6 +5,7 @@ import {
   FaChartSimple,
   FaCircleQuestion,
   FaGear,
+  FaMagnifyingGlass,
   FaPeopleGroup,
   FaRightFromBracket,
   FaStore,
@@ -46,4 +47,8 @@ export const HelpIcon: React.FC<IconBaseProps> = (props) => {
 
 export const LogoutIcon: React.FC<IconBaseProps> = (props) => {
   return <FaRightFromBracket {...props} />;
+};
+
+export const SearchIcon: React.FC<IconBaseProps> = (props) => {
+  return <FaMagnifyingGlass className="rotate-45" {...props} />;
 };

@@ -43,8 +43,6 @@ const LoginPage = () => {
         <Input
           type="text"
           autoFocus
-          variant="bordered"
-          color="default"
           placeholder={t('usname')}
           value={username}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -52,7 +50,6 @@ const LoginPage = () => {
           }
         />
         <Input
-          variant="bordered"
           placeholder={t('pwd')}
           value={password}
           endContent={
