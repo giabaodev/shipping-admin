@@ -18,6 +18,9 @@ const config: Config = {
       backgroundColor: {
         auth: "#cc99ff",
       },
+      width: {
+        ['50']: "200px",
+      }
     },
   },
   darkMode: "class",

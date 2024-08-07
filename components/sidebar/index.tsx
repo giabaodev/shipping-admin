@@ -3,8 +3,8 @@
 import { menuList } from '@/config';
 import { MenuItem } from '@/config/menu';
 import { Listbox, ListboxItem, User } from '@nextui-org/react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import styles from './styles.module.css';
 
 const Sidebar = (): JSX.Element => {
   const navigate = useRouter();
@@ -12,19 +12,23 @@ const Sidebar = (): JSX.Element => {
     navigate.push(path);
   };
   return (
-    <div className="h-full">
-      <div className="h-full flex flex-col pl-2 pr-4 py-6 gap-4 bg-slate-800">
+    <div className={styles.sbWrapper}>
+      <div className={styles.topSidebar}>
         <User
           name={
-            <Link href={'https://google.com'} className="hover:underline">
-              Bao
-            </Link>
+            <p className="truncate cursor-pointer font-bold">
+              Bao Nguyen GiaNguyen Gia
+            </p>
           }
           description="Administrator"
           avatarProps={{
             src: 'https://i.pravatar.cc/150?u=a04258114e29026702d',
           }}
-          className="p-2"
+          classNames={{
+            wrapper: 'flex-1 truncate',
+            name: 'w-full',
+          }}
+          className="p-2 justify-start"
         />
         {menuList.map((list) => (
           <Listbox
@@ -52,6 +56,7 @@ const Sidebar = (): JSX.Element => {
           </Listbox>
         ))}
       </div>
+      <div>Version 2.0</div>
     </div>
   );
 };

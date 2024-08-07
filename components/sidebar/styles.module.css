@@ -1,0 +1,13 @@
+.sbWrapper {
+  @apply bg-emerald-700 h-full flex flex-col;
+}
+
+.topSidebar {
+  @apply h-full flex flex-col pl-2 pr-4 py-6 gap-4 w-50 overflow-y-auto flex-1;
+}
+
+.userWrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

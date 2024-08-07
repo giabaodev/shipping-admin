@@ -1,6 +1,6 @@
-import Sidebar from '@/components/sidebar';
 import React, { Fragment } from 'react';
 import styles from './styles.module.css';
+import Sidebar from '@/components/sidebar';
 
 const HomeLayout = ({
   children,
@@ -11,7 +11,7 @@ const HomeLayout = ({
     <Fragment>
       <section className={styles.customSection}>
         <Sidebar />
-        <div className="h-full overflow-auto">{children}</div>
+        <div className={styles.contentPage}>{children}</div>
       </section>
     </Fragment>
   );

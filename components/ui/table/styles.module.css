@@ -1,0 +1,3 @@
+.boldCapitalized {
+  @apply font-bold capitalize;
+}

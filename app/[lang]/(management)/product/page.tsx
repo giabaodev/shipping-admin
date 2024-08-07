@@ -7,18 +7,14 @@ import { useEffect, useState } from 'react';
 const ProductPage = () => {
   const [data, setData] = useState([]);
 
-  // Fetch data from API
-  // Example:
   const fetchData = async () => {
-    const response = await api.get('/posts');
+    const response = await api.get('/users');
     setData(response.data);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
-
-  console.log(data);
 
   // Table columns
   const columns = [
@@ -27,8 +23,8 @@ const ProductPage = () => {
       uid: 'id',
     },
     {
-      name: 'Title',
-      uid: 'title',
+      name: 'Full Name',
+      uid: 'name',
     },
     {
       name: 'Content',
@@ -36,7 +32,7 @@ const ProductPage = () => {
     },
   ];
 
-  return <CustomTable tableData={data} columns={columns} />;
+  return <CustomTable tableData={data} columns={columns} searchBox />;
 };
 
 export default ProductPage;

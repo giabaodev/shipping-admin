@@ -1,3 +1,7 @@
 .customSection {
   @apply flex h-full;
 }
+
+.contentPage {
+  @apply h-full overflow-auto w-full;
+}

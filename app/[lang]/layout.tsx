@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { Inter } from 'next/font/google';
+import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,7 +36,9 @@ export default async function RootLayout({
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <Providers themeProps={{ attribute: 'class', defaultTheme: 'light' }}>
-            <main className="h-screen w-screen">{children}</main>
+            <Suspense fallback={<div>abdddd</div>}>
+              <main className="h-screen w-full">{children}</main>
+            </Suspense>
           </Providers>
         </NextIntlClientProvider>
       </body>

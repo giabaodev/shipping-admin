@@ -18,17 +18,11 @@ const CustomTable: React.FC<CustomTableProps<unknown>> = ({
   tableData,
   // props,
 }) => {
-  //   const headerColumns = useMemo(() => {
-  //     if (visibleColumns === 'all') return columns;
-
-  //     return columns.filter((column) =>
-  //       Array.from(visibleColumns).includes(column.uid),
-  //     );
-  //   }, [visibleColumns]);
   const renderCell = useCallback((user: any, columnKey: any) => {
+    console.log('------------', columnKey);
     const cellValue = user[columnKey];
     switch (columnKey) {
-      case 'userId':
+      case 'id':
         return <div>abc</div>;
       case 'title':
         return (
@@ -115,14 +109,13 @@ const CustomTable: React.FC<CustomTableProps<unknown>> = ({
         {(column) => (
           <TableColumn
             key={column.uid}
-            align={column.uid === 'actions' ? 'center' : 'start'}
             // allowsSorting={column.sortable}
           >
             {column.name}
           </TableColumn>
         )}
       </TableHeader>
-      <TableBody emptyContent={'No data'} items={tableData}>
+      <TableBody emptyContent={'No data'} items={tableData} lo>
         {(item) => (
           <TableRow key={Date.now() + Math.floor(Math.random() * 33333)}>
             {(columnKey) => (
@@ -132,16 +125,6 @@ const CustomTable: React.FC<CustomTableProps<unknown>> = ({
         )}
       </TableBody>
     </NextTable>
-    // <NextTable>
-    //   <TableHeader>
-    //     <TableColumn key="name">Name</TableColumn>
-    //   </TableHeader>
-    //   <TableBody>
-    //     <TableRow>
-    //       <TableCell>{'John Doe'}</TableCell>
-    //     </TableRow>
-    //   </TableBody>
-    // </NextTable>
   );
 };
 
